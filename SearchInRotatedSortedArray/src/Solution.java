@@ -58,11 +58,11 @@ public class Solution {
         int pivot = findPivot(nums);
 
         if(target >= nums[pivot] && target <= nums[nums.length-1]) {
-            return bs(nums, pivot, nums.length-1, target);
+            return binarySearch(nums, pivot, nums.length-1, target);
         }
-        return bs(nums, 0, pivot - 1, target);
+        return binarySearch(nums, 0, pivot - 1, target);
     }
-    public int bs(int [] arr, int left, int right, int t) {
+    public int binarySearch(int [] arr, int left, int right, int t) {
         while(left <= right) {
             int mid = left + (right - left) / 2;
             if(arr[mid] == t) {
